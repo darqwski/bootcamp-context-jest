@@ -1,0 +1,6 @@
+.dog-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.3s;
+}
