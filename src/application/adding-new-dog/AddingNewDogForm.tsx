@@ -9,7 +9,7 @@ const AddingNewDogForm: React.FC<{ setDogsInDatabase: Dispatch<SetStateAction<ID
     return <div>
         <p>
             <label htmlFor="dog-name-input">Insert dog name: </label>
-            <input id="dog-name-input" value={dogName} onChange={(e) => setDogName(e.target.value)} />
+            <input id="dog-name-input" data-testid="add-dog-name" value={dogName} onChange={(e) => setDogName(e.target.value)} />
         </p>
         <p>
             <label htmlFor="dog-name-race">Insert dog race: </label>

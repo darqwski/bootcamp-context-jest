@@ -8,7 +8,7 @@ const DogCard: React.FC<{dog: IDog, setDogsInDatabase: Dispatch<SetStateAction<I
     }
 
     return (
-        <div >
+        <div data-testid="dog-card" >
             <img style={{transform: `rotate(${angle}deg)`}} src={dog.dogImage} className="dog-image"/>
             <p>{dog.dogName}</p>
             <p>{dog.dogRace}</p>

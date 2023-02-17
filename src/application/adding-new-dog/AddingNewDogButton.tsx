@@ -29,7 +29,7 @@ const AddingNewDogButton: React.FC<IAddingNewDogButton> = ({ setDogName, setDogI
         setDogRace('')
     }
 
-    return  <button onClick={addNewDogIntoDatabase}>Add new dog</button>;
+    return  <button data-testid="add-dog-button" onClick={addNewDogIntoDatabase}>Add new dog</button>;
 };
 
 export default AddingNewDogButton;
