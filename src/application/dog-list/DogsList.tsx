@@ -1,11 +1,10 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {Dispatch, SetStateAction, useContext} from 'react';
 import {IDog} from "../../dogs.types";
 import DogCard from "./DogCard";
+import {DogContext} from "../context/context";
 
-const DogsList: React.FC<{
-    setDogsInDatabase: Dispatch<SetStateAction<IDog[]>>
-    dogsInDatabase: IDog[]
-}> = ({ dogsInDatabase, setDogsInDatabase}) => {
+const DogsList: React.FC = () => {
+    const { setDogsInDatabase, dogsInDatabase } = useContext(DogContext)
 
     return (
         <div style={{display: 'flex'}}>

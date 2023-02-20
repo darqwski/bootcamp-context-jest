@@ -5,7 +5,8 @@ import {IDog} from "../../dogs.types";
 const AddingNewDogForm: React.FC<{ setDogsInDatabase: Dispatch<SetStateAction<IDog[]>>, dogsInDatabase: IDog[] }> = ({ setDogsInDatabase, dogsInDatabase }) => {
     const [dogName, setDogName] = useState('')
     const [dogRace, setDogRace] = useState('')
-    const [dogImg, setDogImg] = useState('')
+    const [dogImg, setDogImg] = useState('');
+
     return <div>
         <p>
             <label htmlFor="dog-name-input">Insert dog name: </label>
