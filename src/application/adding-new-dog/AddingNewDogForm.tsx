@@ -1,8 +1,7 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, { useState} from 'react';
 import AddingNewDogButton from "./AddingNewDogButton";
-import {IDog} from "../../dogs.types";
 
-const AddingNewDogForm: React.FC<{ setDogsInDatabase: Dispatch<SetStateAction<IDog[]>>, dogsInDatabase: IDog[] }> = ({ setDogsInDatabase, dogsInDatabase }) => {
+const AddingNewDogForm: React.FC = () => {
     const [dogName, setDogName] = useState('')
     const [dogRace, setDogRace] = useState('')
     const [dogImg, setDogImg] = useState('');
@@ -20,9 +19,8 @@ const AddingNewDogForm: React.FC<{ setDogsInDatabase: Dispatch<SetStateAction<ID
             <label htmlFor="dog-name-img">Insert dog image: </label>
             <input id="dog-name-img" value={dogImg} onChange={(e) => setDogImg(e.target.value)} />
         </p>
+
         <AddingNewDogButton
-            dogsInDatabase={dogsInDatabase}
-            setDogsInDatabase={setDogsInDatabase}
             dogImg={dogImg}
             setDogImg={setDogImg}
             dogName={dogName}

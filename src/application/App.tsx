@@ -8,7 +8,7 @@ import { saveDogsSomewhere } from "../services/database-service";
 import {DogContext} from "./context/context";
 
 const App = () => {
-    const { setDogsInDatabase, dogsInDatabase } = useContext(DogContext)
+    const {  dogsInDatabase } = useContext(DogContext)
 
   return (
     <div>
@@ -17,7 +17,7 @@ const App = () => {
         <DogsList />
         <div>
             <h3>Adding new dog</h3>
-            <AddingNewDogForm setDogsInDatabase={setDogsInDatabase} dogsInDatabase={dogsInDatabase} />
+            <AddingNewDogForm />
         </div>
         <button data-testid="save-button" onClick={saveDogsSomewhere}>Save dogs</button>
     </div>

@@ -1,11 +1,11 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, {Dispatch, SetStateAction, useContext, useState} from 'react';
 import {IDog} from "../../dogs.types";
+import {DogContext} from "../context/context";
 
-const DogCard: React.FC<{dog: IDog, setDogsInDatabase: Dispatch<SetStateAction<IDog[]>> }> = ({dog, setDogsInDatabase}) => {
+const DogCard: React.FC<{dog: IDog }> = ({dog}) => {
+    const { removeDog } = useContext(DogContext)
+
     const [angle, setAngle] = useState(0);
-    const removeDog = () => {
-        setDogsInDatabase(prevDogs=>prevDogs.filter(prevDog => prevDog.dogId !== dog.dogId));
-    }
 
     return (
         <div data-testid="dog-card" >
@@ -16,7 +16,7 @@ const DogCard: React.FC<{dog: IDog, setDogsInDatabase: Dispatch<SetStateAction<I
                 <button onClick={() => setAngle(prevAngle => prevAngle + 30)}>Left</button>
                 <button onClick={() => setAngle(prevAngle => prevAngle - 30)}>Right</button>
             </p>
-            <button onClick={() => removeDog()}>Remove</button>
+            <button onClick={() => removeDog(dog)}>Remove</button>
         </div>
     );
 };
